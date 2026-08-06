@@ -20,6 +20,16 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: fraud_redis
+    container_name: redis
     ports:
       - "6379:6379"
+
+  api:
+    image: fraud-gnn-api:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    depends_on:
+      - redis

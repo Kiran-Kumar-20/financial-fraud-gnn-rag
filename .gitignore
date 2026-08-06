@@ -1,6 +1,18 @@
-.venv/
-__pycache__/
-*.pyc
+# Environments
 .env
-.pytest_cache/
-*.log
+.venv/
+env/
+venv/
+
+# Python Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and OS Files
+.vscode/
+.idea/
+.DS_Store
+
+# Docker
+docker-compose.override.yml
